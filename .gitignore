@@ -29,3 +29,15 @@ data/domain_knowledge/
 # IDE
 .vscode/
 .idea/
+
+# Debug/test scripts
+processing/debug_*.py
+processing/test_*.py
+scrapers/debug_*.py
+scrapers/explore_*.py
+scrapers/test_*.py
+scrapers/web_search_test.py
+
+# IDE skill symlinks
+frontend/.agents/
+frontend/.claude/
