@@ -1,0 +1,209 @@
+{
+  "car_name": "Tata Sierra EV",
+  "source": "cardekho",
+  "trims": [
+    {
+      "variant_name": "Pure",
+      "battery_options": [
+        {
+          "battery_kwh": 63,
+          "range_km": 566,
+          "price_lakh": 18.79,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Sierra_EV/Tata_Sierra_EV_Pure_63_RWD.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "25Min-110kW-(20-80%)",
+      "boot_space": "622 Litres",
+      "ground_clearance": "205 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    },
+    {
+      "variant_name": "Pure S",
+      "battery_options": [
+        {
+          "battery_kwh": 63,
+          "range_km": 566,
+          "price_lakh": 19.99,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Sierra_EV/Tata_Sierra_EV_Pure_S_63_RWD.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Sunroof",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "25Min-110kW-(20-80%)",
+      "boot_space": "622 Litres",
+      "ground_clearance": "205 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    },
+    {
+      "variant_name": "Adventure",
+      "battery_options": [
+        {
+          "battery_kwh": 63,
+          "range_km": 566,
+          "price_lakh": 20.99,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 665,
+          "price_lakh": 22.19,
+          "drive_type": "RWD",
+          "power_bhp": 313,
+          "torque_nm": 504
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Sierra_EV/Tata_Sierra_EV_Adventure_63_RWD.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Sunroof",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "25Min-110kW-(20-80%)",
+      "boot_space": "622 Litres",
+      "ground_clearance": "205 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    },
+    {
+      "variant_name": "Empowered",
+      "battery_options": [
+        {
+          "battery_kwh": 63,
+          "range_km": 566,
+          "price_lakh": 22.79,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 665,
+          "price_lakh": 23.79,
+          "drive_type": "RWD",
+          "power_bhp": 313,
+          "torque_nm": 504
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Sierra_EV/Tata_Sierra_EV_Empowered_63_RWD.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Sunroof",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "25Min-110kW-(20-80%)",
+      "boot_space": "622 Litres",
+      "ground_clearance": "205 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    },
+    {
+      "variant_name": "Empowered A",
+      "battery_options": [
+        {
+          "battery_kwh": 75,
+          "range_km": 665,
+          "price_lakh": 24.79,
+          "drive_type": "RWD",
+          "power_bhp": 313,
+          "torque_nm": 504
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 624,
+          "price_lakh": 25.99,
+          "drive_type": "AWD",
+          "power_bhp": 313,
+          "torque_nm": 504
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Sierra_EV/Tata_Sierra_EV_Empowered_A_75_RWD.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Sunroof",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "26Min-120kW-(20-80%)",
+      "boot_space": "622 Litres",
+      "ground_clearance": "205 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    }
+  ],
+  "ncap_rating": "Not yet crash-tested (targeting 5-star Bharat NCAP)"
+}

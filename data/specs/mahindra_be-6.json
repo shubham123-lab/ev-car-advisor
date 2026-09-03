@@ -1,0 +1,285 @@
+{
+  "car_name": "Mahindra BE 6",
+  "source": "cardekho",
+  "trims": [
+    {
+      "variant_name": "SPORTEQ One",
+      "battery_options": [
+        {
+          "battery_kwh": 59,
+          "range_km": 548,
+          "price_lakh": 19.45,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_Sporteq_One_59kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "SPORTEQ Two",
+      "battery_options": [
+        {
+          "battery_kwh": 59,
+          "range_km": 548,
+          "price_lakh": 20.95,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_Sporteq_Two_59kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "SPORTEQ Three",
+      "battery_options": [
+        {
+          "battery_kwh": 59,
+          "range_km": 548,
+          "price_lakh": 21.95,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 70,
+          "range_km": 651,
+          "price_lakh": 22.95,
+          "drive_type": "RWD",
+          "power_bhp": 245,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_Sporteq_Three_59kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "SPORTEQ Three Plus",
+      "battery_options": [
+        {
+          "battery_kwh": 70,
+          "range_km": 651,
+          "price_lakh": 23.95,
+          "drive_type": "RWD",
+          "power_bhp": 245,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 79,
+          "range_km": 683,
+          "price_lakh": 24.95,
+          "drive_type": "RWD",
+          "power_bhp": 286,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_Sporteq_Three_Plus_70kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "FE",
+      "battery_options": [
+        {
+          "battery_kwh": 79,
+          "range_km": 683,
+          "price_lakh": 24.45,
+          "drive_type": "RWD",
+          "power_bhp": 286,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_FE_79kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "FE Four",
+      "battery_options": [
+        {
+          "battery_kwh": 79,
+          "range_km": 683,
+          "price_lakh": 26.95,
+          "drive_type": "RWD",
+          "power_bhp": 286,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_FE_Four_79kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "SPORTEQ Four",
+      "battery_options": [
+        {
+          "battery_kwh": 79,
+          "range_km": 683,
+          "price_lakh": 26.95,
+          "drive_type": "RWD",
+          "power_bhp": 286,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_Sporteq_Four_79kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "SPORTEQ Launch Edition",
+      "battery_options": [
+        {
+          "battery_kwh": 79,
+          "range_km": 683,
+          "price_lakh": 26.95,
+          "drive_type": "RWD",
+          "power_bhp": 286,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_BE_6/Mahindra_BE_6_Sporteq_Launch_Edition_79kWh.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "N/A",
+      "boot_space": "455 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "N/A",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    }
+  ],
+  "ncap_rating": "5-Star Bharat NCAP (31.97/32)"
+}

@@ -1,0 +1,271 @@
+{
+  "car_name": "Mahindra XEV 9e",
+  "source": "cardekho",
+  "trims": [
+    {
+      "variant_name": "Pack One",
+      "battery_options": [
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 21.9,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 22.4,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 22.65,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_XEV_9e/Mahindra_XEV_9e_Pack_One.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "20Min with 140 kW DC",
+      "boot_space": "663 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "Pack Two",
+      "battery_options": [
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 24.9,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 25.4,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 25.65,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 26.5,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 27.0,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 27.25,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_XEV_9e/Mahindra_XEV_9e_Pack_Two.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "20Min with 140 kW DC",
+      "boot_space": "663 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "Pack Three Select",
+      "battery_options": [
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 27.9,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 28.4,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 59,
+          "range_km": 542,
+          "price_lakh": 28.65,
+          "drive_type": "RWD",
+          "power_bhp": 231,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_XEV_9e/Mahindra_XEV_9e_Pack_Three_Select.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "20Min with 140 kW DC",
+      "boot_space": "663 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "Cineluxe Edition",
+      "battery_options": [
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 29.35,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_XEV_9e/Mahindra_XEV_9e_Cineluxe_Edition.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "20Min with 180 kW DC",
+      "boot_space": "663 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    },
+    {
+      "variant_name": "Pack Three",
+      "battery_options": [
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 30.5,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 31.0,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        },
+        {
+          "battery_kwh": 79,
+          "range_km": 656,
+          "price_lakh": 31.25,
+          "drive_type": "RWD",
+          "power_bhp": 282,
+          "torque_nm": 380
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Mahindra_XEV_9e/Mahindra_XEV_9e_Pack_Three.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "20Min with 180 kW DC",
+      "boot_space": "663 Litres",
+      "ground_clearance": "207 mm",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (1st owner)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime for first owner; 10 years / 2 lakh km if ownership transfers"
+    }
+  ],
+  "ncap_rating": "5-Star Bharat NCAP (32/32 - perfect score)"
+}

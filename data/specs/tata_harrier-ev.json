@@ -1,0 +1,162 @@
+{
+  "car_name": "Tata Harrier EV",
+  "source": "cardekho",
+  "trims": [
+    {
+      "variant_name": "Adventure",
+      "battery_options": [
+        {
+          "battery_kwh": 65,
+          "range_km": 538,
+          "price_lakh": 21.69,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 65,
+          "range_km": 538,
+          "price_lakh": 22.19,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Harrier_EV/Tata_Harrier_EV_Adventure_65.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "20-80 % : 25 mins",
+      "boot_space": "502 Litres",
+      "ground_clearance": "N/A",
+      "airbags": "6",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    },
+    {
+      "variant_name": "Fearless",
+      "battery_options": [
+        {
+          "battery_kwh": 65,
+          "range_km": 538,
+          "price_lakh": 24.19,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 627,
+          "price_lakh": 25.19,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 627,
+          "price_lakh": 26.69,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Harrier_EV/Tata_Harrier_EV_Fearless_Plus_65.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Sunroof",
+        "Advanced Internet Features"
+      ],
+      "dc_charging_time": "20-80 % : 25 mins",
+      "boot_space": "502 Litres",
+      "ground_clearance": "N/A",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    },
+    {
+      "variant_name": "Empowered",
+      "battery_options": [
+        {
+          "battery_kwh": 75,
+          "range_km": 627,
+          "price_lakh": 27.69,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 627,
+          "price_lakh": 28.44,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 622,
+          "price_lakh": 29.19,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        },
+        {
+          "battery_kwh": 75,
+          "range_km": 622,
+          "price_lakh": 29.94,
+          "drive_type": "RWD",
+          "power_bhp": 235,
+          "torque_nm": 315
+        }
+      ],
+      "representative_url": "https://www.cardekho.com/overview/Tata_Harrier_EV/Tata_Harrier_EV_Empowered_75.htm",
+      "top_features": [
+        "Digital Instrument Cluster",
+        "Wireless Charging",
+        "Auto Dimming IRVM",
+        "Rear Camera",
+        "KeyLess Entry",
+        "Automatic Climate Control",
+        "Rear AC Vents",
+        "Air Purifier",
+        "Cruise Control",
+        "Parking Sensors",
+        "Power Windows",
+        "Sunroof",
+        "Advanced Internet Features",
+        "ADAS"
+      ],
+      "dc_charging_time": "20-80 % : 25 mins",
+      "boot_space": "502 Litres",
+      "ground_clearance": "N/A",
+      "airbags": "7",
+      "battery_warranty": "Lifetime (15 yrs)",
+      "regen_levels": "4",
+      "battery_warranty_full": "Lifetime (15 years) for first owner"
+    }
+  ],
+  "ncap_rating": "5-Star Bharat NCAP"
+}

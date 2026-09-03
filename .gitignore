@@ -1,0 +1,31 @@
+# Virtual environment
+env/
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables (API keys)
+.env
+.env.local
+
+# Scraped raw HTML files
+*.html
+
+# Raw scraped data (not for public repo)
+data/cardekho/
+data/carwale/
+data/youtube/
+data/web_articles/
+data/domain_knowledge/
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
