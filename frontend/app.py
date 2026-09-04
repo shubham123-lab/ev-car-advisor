@@ -29,7 +29,8 @@ st.markdown("""
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     color: #d4d4d4;
-    padding-bottom: 6px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 .ev-total {
     font-family: ui-monospace, SFMono-Regular, monospace;
@@ -49,19 +50,22 @@ st.markdown("""
     font-size: clamp(15px, 3.2vw, 17px);
     font-weight: 600;
     color: #4da6ff;
-    margin-top: 18px;
-    margin-bottom: 8px;
+    margin-top: 12px;
+    margin-bottom: 6px;
     letter-spacing: 0.5px;
 }
 .ev-note {
     background: #1a2733;
     border-left: 3px solid #4da6ff;
-    padding: 12px 16px;
+    padding: 10px 14px;
     border-radius: 4px;
-    font-size: clamp(12.5px, 2.9vw, 14px);
-    margin: 14px 0;
+    font-size: clamp(12.5px, 2.9vw, 13.5px);
+    margin: 10px 0;
     color: #c9d6e0;
+    max-width: 620px;
+    line-height: 1.5;
 }
+
 .ev-suggest {
     font-style: italic;
     font-size: clamp(13px, 3vw, 15px);
@@ -93,12 +97,23 @@ st.markdown("""
 }
 .ev-link a { color: #4da6ff; font-weight: 500; }
 
+/* Hidden view ke wrapper container ko bhi collapse karo */
+div[data-testid="stMarkdownContainer"]:has(> .ev-narrow) {
+    display: contents;
+}
+div[data-testid="stMarkdownContainer"]:has(> .ev-wide) {
+    display: contents;
+}
+
 .ev-wide { display: block; }
 .ev-narrow { display: none; }
 
 @media (max-width: 700px) {
-    .ev-wide { display: none; }
-    .ev-narrow { display: block; }
+    .ev-wide { display: none !important; }
+    .ev-narrow { display: block !important; }
+}
+.ev-note + .ev-note {
+    margin-top: 6px;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -241,8 +256,6 @@ def render_answer(answer):
             flush()
             st.markdown(f"<div class='ev-suggest'>{stripped}</div>", unsafe_allow_html=True)
         elif not stripped:
-            if buffer:
-                buffer.append("")      # buffer me space add karo
             continue
         else:
             buffer.append(line)

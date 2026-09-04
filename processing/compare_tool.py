@@ -164,7 +164,7 @@ def format_compare_response(data):
         lines.append(key)
         lines.append(f"   {short_a + ':':<{SHORT_W}} Rs {indian_format(data['price_a'][key])}")
         lines.append(f"   {short_b + ':':<{SHORT_W}} Rs {indian_format(data['price_b'][key])}")
-        lines.append("")   
+        lines.append(" ")   
     lines.append(f"[[TOTAL]]Total")
     lines.append(f"[[TOTAL]]   {short_a + ':':<{SHORT_W}} Rs {indian_format(data['price_a']['Total'])}")
     lines.append(f"[[TOTAL]]   {short_b + ':':<{SHORT_W}} Rs {indian_format(data['price_b']['Total'])}")
@@ -178,7 +178,6 @@ def format_compare_response(data):
     lines.append("[[NARROW_END]]")
 
     # ===== COMMON =====
-    lines.append("")
     lines.append("FEATURE DIFFERENCES")
     fd = data["feature_diff"]
     if fd["only_in_a"]:
@@ -308,8 +307,6 @@ def list_all_variants(car_name):
 
     lines.append("")
     lines.append(f"NCAP Rating: {shorten_ncap(all_ncap.get(car_name, 'N/A'))}")
-    lines.append("")
-    lines.append(f"Note: {HOME_CHARGER_NOTE}")
     lines.append("")
     lines.append(f"Note: Prices are ex-showroom, RTO & Insurance extra. {HOME_CHARGER_NOTE}")
     lines.append("")
