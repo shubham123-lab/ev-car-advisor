@@ -6,6 +6,11 @@ if PROCESSING_PATH not in sys.path:
     sys.path.insert(0, PROCESSING_PATH)
 
 import streamlit as st
+
+for key in ["GOOGLE_API_KEY", "API_KEYS", "YOUTUBE_API_KEY"]:
+    if key in st.secrets:
+        os.environ[key] = st.secrets[key]
+
 from main_pipeline import get_response
 from load_specs import load_all_specs
 
