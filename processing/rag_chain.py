@@ -3,12 +3,16 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
-vector_store = FAISS.load_local("../data/faiss_index", embeddings, allow_dangerous_deserialization=True)
+vector_store = FAISS.load_local(os.path.join(DATA_DIR, "faiss_index"), embeddings, allow_dangerous_deserialization=True)
 retriever = vector_store.as_retriever(search_type="similarity", search_kwargs={"k": 12})
 
 llm = ChatGoogleGenerativeAI(model="gemini-flash-latest")

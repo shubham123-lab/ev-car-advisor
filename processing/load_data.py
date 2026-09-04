@@ -1,11 +1,15 @@
 import json
 import glob
 from langchain_core.documents import Document
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
 def load_cardekho_data():
     """CarDekho reviews load karta hai"""
     documents = []
-    files = glob.glob("../data/cardekho/*.json")
+    files = glob.glob(os.path.join(DATA_DIR, "cardekho", "*.json"))
+
     
     for filepath in files:
         with open(filepath, "r", encoding="utf-8") as f:
@@ -37,7 +41,7 @@ def load_cardekho_data():
 def load_carwale_data():
     """CarWale reviews load karta hai"""
     documents = []
-    files = glob.glob("../data/carwale/*.json")
+    files = glob.glob(os.path.join(DATA_DIR, "carwale", "*.json"))
     
     for filepath in files:
         with open(filepath, "r", encoding="utf-8") as f:
@@ -68,7 +72,8 @@ def load_carwale_data():
 def load_web_articles_data():
     """Web articles (car-specific) load karta hai"""
     documents = []
-    files = glob.glob("../data/web_articles/*.json")
+    files = glob.glob(os.path.join(DATA_DIR, "web_articles", "*.json"))
+
     
     for filepath in files:
         with open(filepath, "r", encoding="utf-8") as f:
@@ -103,7 +108,7 @@ def load_web_articles_data():
 def load_youtube_data():
     """YouTube transcripts load karta hai (jo mila hai)"""
     documents = []
-    files = glob.glob("../data/youtube/*.json")
+    files = glob.glob(os.path.join(DATA_DIR, "youtube", "*.json"))
     
     for filepath in files:
         with open(filepath, "r", encoding="utf-8") as f:
@@ -134,7 +139,7 @@ def load_youtube_data():
 def load_domain_knowledge_data():
     """Policy aur Technology - car-specific NAHI hai, isliye car_name nahi hoga"""
     documents = []
-    files = glob.glob("../data/domain_knowledge/*.json")
+    files = glob.glob(os.path.join(DATA_DIR, "domain_knowledge", "*.json"))
     
     for filepath in files:
         with open(filepath, "r", encoding="utf-8") as f:

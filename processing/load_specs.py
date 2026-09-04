@@ -1,11 +1,15 @@
 import json
 import glob
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
 # load_specs.py me update karo
 def load_all_specs():
     all_specs = {}
     all_ncap = {}
-    files = glob.glob("../data/specs/*.json")
+    files = glob.glob(os.path.join(DATA_DIR, "specs", "*.json"))
     
     for filepath in files:
         with open(filepath, "r", encoding="utf-8") as f:
