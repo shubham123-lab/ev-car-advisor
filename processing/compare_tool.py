@@ -4,6 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+HOME_CHARGER_PRICE = 49000
+HOME_CHARGER_NOTE = "Optional: 7.2 kW home charger — approx Rs 49,000 extra (installation varies by location)."
+
 POLICYBAZAAR_LINK = "https://www.policybazaar.com/motor-insurance/car-insurance/"
 
 def indian_format(num):
@@ -108,7 +111,6 @@ def format_compare_response(data):
     car_a = data["car_a"]
     car_b = data["car_b"]
 
-    # "Tata Sierra EV (Empowered)" -> ["Tata Sierra EV", "Empowered"]
     def split_name(full):
         if "(" in full:
             name, _, trim = full.partition("(")
@@ -118,34 +120,65 @@ def format_compare_response(data):
     name_a, trim_a = split_name(car_a)
     name_b, trim_b = split_name(car_b)
 
+    short_a = name_a.replace("Mahindra ", "").replace("Tata ", "")
+    short_b = name_b.replace("Mahindra ", "").replace("Tata ", "")
+
     LABEL_W = 24
     COL_W = 30
+    SHORT_W = 10
 
     lines = []
     lines.append("")
     lines.append(f"[[IMAGES]]{name_a}|{name_b}")
+
+    # ===== WIDE (desktop/tablet) =====
+    lines.append("[[WIDE_START]]")
     lines.append(f"{'':<{LABEL_W}}{name_a:<{COL_W}}{name_b}")
     lines.append(f"{'':<{LABEL_W}}{trim_a:<{COL_W}}{trim_b}")
     lines.append("")
-
     lines.append("PRICE")
     for key in data["price_a"]:
         if key == "Total":
             continue
-        val_a = f"Rs {indian_format(data['price_a'][key])}"
-        val_b = f"Rs {indian_format(data['price_b'][key])}"
-        lines.append(f"{key:<{LABEL_W}}{val_a:<{COL_W}}{val_b}")
-
+        va = f"Rs {indian_format(data['price_a'][key])}"
+        vb = f"Rs {indian_format(data['price_b'][key])}"
+        lines.append(f"{key:<{LABEL_W}}{va:<{COL_W}}{vb}")
     ta = f"Rs {indian_format(data['price_a']['Total'])}"
     tb = f"Rs {indian_format(data['price_b']['Total'])}"
     lines.append(f"[[TOTAL]]{'Total':<{LABEL_W}}{ta:<{COL_W}}{tb}")
     lines.append("")
-
     lines.append("SPECS")
     for key in data["specs_a"]:
         lines.append(f"{key:<{LABEL_W}}{str(data['specs_a'][key]):<{COL_W}}{data['specs_b'][key]}")
-    lines.append("")
+    lines.append("[[WIDE_END]]")
 
+    # ===== NARROW (mobile) =====
+    lines.append("[[NARROW_START]]")
+    lines.append(f"[[HEADER]]{name_a} ({trim_a})")
+    lines.append(f"[[HEADER]]vs {name_b} ({trim_b})")
+    lines.append("")
+    lines.append("PRICE")
+    for key in data["price_a"]:
+        if key == "Total":
+            continue
+        lines.append(key)
+        lines.append(f"   {short_a + ':':<{SHORT_W}} Rs {indian_format(data['price_a'][key])}")
+        lines.append(f"   {short_b + ':':<{SHORT_W}} Rs {indian_format(data['price_b'][key])}")
+        lines.append("")   
+    lines.append(f"[[TOTAL]]Total")
+    lines.append(f"[[TOTAL]]   {short_a + ':':<{SHORT_W}} Rs {indian_format(data['price_a']['Total'])}")
+    lines.append(f"[[TOTAL]]   {short_b + ':':<{SHORT_W}} Rs {indian_format(data['price_b']['Total'])}")
+    lines.append("")
+    lines.append("SPECS")
+    for key in data["specs_a"]:
+        lines.append(key)
+        lines.append(f"   {short_a + ':':<{SHORT_W}} {data['specs_a'][key]}")
+        lines.append(f"   {short_b + ':':<{SHORT_W}} {data['specs_b'][key]}")
+        lines.append("")   
+    lines.append("[[NARROW_END]]")
+
+    # ===== COMMON =====
+    lines.append("")
     lines.append("FEATURE DIFFERENCES")
     fd = data["feature_diff"]
     if fd["only_in_a"]:
@@ -153,8 +186,7 @@ def format_compare_response(data):
     if fd["only_in_b"]:
         lines.append(f"{name_b} ({trim_b}) has: {', '.join(fd['only_in_b'])}")
     lines.append("")
-
-    lines.append("Note: RTO & Insurance are approximate and vary by state/insurer.")
+    lines.append(f"Note: {HOME_CHARGER_NOTE} RTO & Insurance are approximate and vary by state/insurer.")
     lines.append(f"Get accurate insurance quotes: {POLICYBAZAAR_LINK}")
     lines.append("")
     lines.append("Would you like detailed interior/exterior features for either car?")
@@ -185,7 +217,7 @@ def format_single_car_response(car_name, trim_name, price_data, specs_data):
         lines.append(f"{key:<{LABEL_W}}{val}")
     lines.append("")
 
-    lines.append("Note: RTO & Insurance are approximate and vary by state/insurer.")
+    lines.append(f"Note: {HOME_CHARGER_NOTE} RTO & Insurance are approximate and vary by state/insurer.")
     lines.append(f"Get accurate insurance quotes: {POLICYBAZAAR_LINK}")
 
     return "\n".join(lines)
@@ -277,7 +309,9 @@ def list_all_variants(car_name):
     lines.append("")
     lines.append(f"NCAP Rating: {shorten_ncap(all_ncap.get(car_name, 'N/A'))}")
     lines.append("")
-    lines.append("Note: Prices are ex-showroom. RTO & Insurance extra.")
+    lines.append(f"Note: {HOME_CHARGER_NOTE}")
+    lines.append("")
+    lines.append(f"Note: Prices are ex-showroom, RTO & Insurance extra. {HOME_CHARGER_NOTE}")
     lines.append("")
     lines.append("Which variant would you like full specs and on-road price for?")
 

@@ -7,9 +7,12 @@ if PROCESSING_PATH not in sys.path:
 
 import streamlit as st
 
-for key in ["GOOGLE_API_KEY", "API_KEYS", "YOUTUBE_API_KEY"]:
-    if key in st.secrets:
-        os.environ[key] = st.secrets[key]
+try:
+    for key in ["GOOGLE_API_KEY", "API_KEYS", "YOUTUBE_API_KEY"]:
+        if key in st.secrets:
+            os.environ[key] = st.secrets[key]
+except Exception:
+    pass  # Local run - .env file se load hoga
 
 from main_pipeline import get_response
 from load_specs import load_all_specs
@@ -37,7 +40,7 @@ st.markdown("""
     border: 1px solid #2e7d32;
     border-radius: 6px;
     padding: 10px 14px;
-    margin: 10px 0;
+    margin: 6px 0;
     white-space: pre;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -84,6 +87,19 @@ st.markdown("""
     color: #9aa0a6;
     margin-bottom: 2px;
 }
+.ev-link {
+    font-size: clamp(12.5px, 2.9vw, 14px);
+    margin: 10px 0;
+}
+.ev-link a { color: #4da6ff; font-weight: 500; }
+
+.ev-wide { display: block; }
+.ev-narrow { display: none; }
+
+@media (max-width: 700px) {
+    .ev-wide { display: none; }
+    .ev-narrow { display: block; }
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -92,6 +108,14 @@ st.markdown("""
 def get_cars_data():
     all_specs, all_ncap = load_all_specs()
     return all_specs, all_ncap
+
+
+def _cls(base, view_mode):
+    if view_mode == "wide":
+        return f"{base} ev-wide"
+    if view_mode == "narrow":
+        return f"{base} ev-narrow"
+    return base
 
 
 def render_answer(answer):
@@ -107,15 +131,36 @@ def render_answer(answer):
 
     lines = answer.split("\n")
     buffer = []
+    state = {"view": None}
 
     def flush():
         if buffer:
             body = "<br>".join(l.replace(" ", "&nbsp;") for l in buffer)
-            st.markdown(f"<div class='ev-mono'>{body}</div>", unsafe_allow_html=True)
+            st.markdown(
+                f"<div class='{_cls('ev-mono', state['view'])}'>{body}</div>",
+                unsafe_allow_html=True
+            )
             buffer.clear()
 
     for line in lines:
         stripped = line.strip()
+
+        if line.startswith("[[WIDE_START]]"):
+            flush()
+            state["view"] = "wide"
+            continue
+        if line.startswith("[[WIDE_END]]"):
+            flush()
+            state["view"] = None
+            continue
+        if line.startswith("[[NARROW_START]]"):
+            flush()
+            state["view"] = "narrow"
+            continue
+        if line.startswith("[[NARROW_END]]"):
+            flush()
+            state["view"] = None
+            continue
 
         if line.startswith("[[IMAGES]]"):
             flush()
@@ -147,28 +192,38 @@ def render_answer(answer):
         elif line.startswith("[[SELECTED]]"):
             flush()
             st.markdown(
-                f"<div class='ev-selected'>{line.replace('[[SELECTED]]', '')}</div>",
+                f"<div class='{_cls('ev-selected', state['view'])}'>"
+                f"{line.replace('[[SELECTED]]', '')}</div>",
                 unsafe_allow_html=True
             )
         elif line.startswith("[[HEADER]]"):
             flush()
             st.markdown(
-                f"<div class='ev-header-big'>{line.replace('[[HEADER]]', '')}</div>",
+                f"<div class='{_cls('ev-header-big', state['view'])}'>"
+                f"{line.replace('[[HEADER]]', '')}</div>",
                 unsafe_allow_html=True
             )
         elif line.startswith("[[SUBHEADER]]"):
             flush()
             st.markdown(
-                f"<div class='ev-subheader'>{line.replace('[[SUBHEADER]]', '')}</div>",
+                f"<div class='{_cls('ev-subheader', state['view'])}'>"
+                f"{line.replace('[[SUBHEADER]]', '')}</div>",
                 unsafe_allow_html=True
             )
         elif line.startswith("[[TOTAL]]"):
             flush()
             content = line.replace("[[TOTAL]]", "").replace(" ", "&nbsp;")
-            st.markdown(f"<div class='ev-total'>{content}</div>", unsafe_allow_html=True)
+            st.markdown(
+                f"<div class='{_cls('ev-total', state['view'])}'>{content}</div>",
+                unsafe_allow_html=True
+            )
         elif stripped in ("PRICE", "SPECS", "FEATURE DIFFERENCES") or stripped.endswith("All Variants"):
             flush()
-            st.markdown(f"<div class='ev-heading'>{stripped.title()}</div>", unsafe_allow_html=True)
+            heading_text = stripped if stripped.endswith("All Variants") else stripped.title()
+            st.markdown(
+                f"<div class='{_cls('ev-heading', state['view'])}'>{heading_text}</div>",
+                unsafe_allow_html=True
+            )
         elif stripped.startswith("Note:"):
             flush()
             st.markdown(f"<div class='ev-note'>{stripped}</div>", unsafe_allow_html=True)
@@ -178,20 +233,22 @@ def render_answer(answer):
             label = stripped[:idx].strip() if idx > 0 else "Insurance quotes:"
             url = stripped[idx:].strip() if idx > 0 else "https://www.policybazaar.com/motor-insurance/car-insurance/"
             st.markdown(
-                f"<div style='font-size:clamp(12.5px,2.9vw,14px);margin:10px 0;'>{label} "
-                f"<a href='{url}' target='_blank' style='color:#4da6ff;font-weight:500;'>"
-                f"Check on PolicyBazaar</a></div>",
+                f"<div class='ev-link'>{label} "
+                f"<a href='{url}' target='_blank'>Check on PolicyBazaar</a></div>",
                 unsafe_allow_html=True
             )
         elif stripped.startswith("Would you like") or stripped.startswith("Chahenge"):
             flush()
             st.markdown(f"<div class='ev-suggest'>{stripped}</div>", unsafe_allow_html=True)
         elif not stripped:
+            if buffer:
+                buffer.append("")      # buffer me space add karo
             continue
         else:
             buffer.append(line)
 
     flush()
+
 
 def render_tco_form():
     st.markdown("**Let me calculate your savings. A few quick questions:**")
@@ -302,7 +359,6 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-# ===== SIDEBAR =====
 with st.sidebar:
     st.markdown("### EV Car Advisor")
     st.caption("India-focused EV intelligence")
@@ -324,13 +380,11 @@ with st.sidebar:
         st.rerun()
 
 
-# ===== DETERMINE PROMPT =====
 prompt = None
 if "pending_prompt" in st.session_state:
     prompt = st.session_state.pop("pending_prompt")
 
 
-# ===== WELCOME SCREEN =====
 if not st.session_state.messages:
     st.markdown("## EV Car Advisor")
     st.caption("Reviews, specs, comparisons, and cost analysis for India's top EVs")
@@ -350,7 +404,6 @@ if not st.session_state.messages:
             st.rerun()
 
 
-# ===== RENDER HISTORY =====
 last_idx = len(st.session_state.messages) - 1
 
 for i, msg in enumerate(st.session_state.messages):
@@ -367,13 +420,11 @@ for i, msg in enumerate(st.session_state.messages):
             st.markdown(msg["content"])
 
 
-# ===== CHAT INPUT =====
 typed = st.chat_input("Ask about range, price, specs, savings, or comparisons...")
 if typed:
     prompt = typed
 
 
-# ===== HANDLE PROMPT =====
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.session_state.processing = True
