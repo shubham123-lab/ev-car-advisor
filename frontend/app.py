@@ -16,6 +16,77 @@ from load_specs import load_all_specs
 
 st.set_page_config(page_title="EV Car Advisor", page_icon="🚗", layout="centered")
 
+st.markdown("""
+<style>
+.ev-mono {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: clamp(10.5px, 2.6vw, 13.5px);
+    line-height: 1.8;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    color: #d4d4d4;
+    padding-bottom: 6px;
+}
+.ev-total {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: clamp(11px, 2.8vw, 14px);
+    font-weight: 600;
+    color: #81c784;
+    background: #0f2b18;
+    border: 1px solid #2e7d32;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 10px 0;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.ev-heading {
+    font-size: clamp(15px, 3.2vw, 17px);
+    font-weight: 600;
+    color: #4da6ff;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+.ev-note {
+    background: #1a2733;
+    border-left: 3px solid #4da6ff;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: clamp(12.5px, 2.9vw, 14px);
+    margin: 14px 0;
+    color: #c9d6e0;
+}
+.ev-suggest {
+    font-style: italic;
+    font-size: clamp(13px, 3vw, 15px);
+    color: #8ab4a0;
+    margin: 18px 0 8px 0;
+}
+.ev-selected {
+    background: #1a2733;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: clamp(11.5px, 2.7vw, 13px);
+    color: #9fc5e8;
+    margin-bottom: 12px;
+}
+.ev-header-big {
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: 600;
+    color: #e8e8e8;
+    margin-bottom: 4px;
+}
+.ev-subheader {
+    font-size: clamp(11px, 2.6vw, 13px);
+    color: #9aa0a6;
+    margin-bottom: 2px;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 @st.cache_data
 def get_cars_data():
@@ -27,7 +98,7 @@ def render_answer(answer):
     is_table = (
         ("PRICE" in answer and "SPECS" in answer)
         or "7-Year Running Cost" in answer
-        or "All Variants" in answer          # ← ye add karo
+        or "All Variants" in answer
     )
 
     if not is_table:
@@ -39,13 +110,8 @@ def render_answer(answer):
 
     def flush():
         if buffer:
-            st.markdown(
-                f"<div style='font-family:ui-monospace,SFMono-Regular,monospace;"
-                f"font-size:13.5px;line-height:1.9;white-space:pre;overflow-x:auto;"
-                f"color:#d4d4d4;'>"
-                f"{'<br>'.join(l.replace(' ', '&nbsp;') for l in buffer)}</div>",
-                unsafe_allow_html=True
-            )
+            body = "<br>".join(l.replace(" ", "&nbsp;") for l in buffer)
+            st.markdown(f"<div class='ev-mono'>{body}</div>", unsafe_allow_html=True)
             buffer.clear()
 
     for line in lines:
@@ -53,14 +119,11 @@ def render_answer(answer):
 
         if line.startswith("[[IMAGES]]"):
             flush()
-            car_names_str = line.replace("[[IMAGES]]", "")
-            names = [n.strip() for n in car_names_str.split("|")]
-
+            names = [n.strip() for n in line.replace("[[IMAGES]]", "").split("|")]
             IMAGES_DIR = os.path.join(
                 os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                 "data", "images"
             )
-
             valid = []
             for n in names:
                 base = n.lower().replace(" ", "_")
@@ -72,91 +135,63 @@ def render_answer(answer):
 
             if valid:
                 if len(valid) == 1:
-                    path, caption = valid[0]
-                    col1, col2, col3 = st.columns([1, 2, 1])
-                    with col2:
-                        st.image(path, caption=caption, width=280)
+                    c1, c2, c3 = st.columns([1, 2, 1])
+                    with c2:
+                        st.image(valid[0][0], caption=valid[0][1], use_container_width=True)
                 else:
                     cols = st.columns(len(valid))
-                    for col, (path, caption) in zip(cols, valid):
+                    for col, (path, cap) in zip(cols, valid):
                         with col:
-                            st.image(path, caption=caption, use_container_width=True)
-
+                            st.image(path, caption=cap, use_container_width=True)
 
         elif line.startswith("[[SELECTED]]"):
             flush()
             st.markdown(
-                f"<div style='background:#1a2733;border-radius:6px;padding:10px 14px;"
-                f"font-size:13px;color:#9fc5e8;margin-bottom:12px;'>"
-                f"{line.replace('[[SELECTED]]', '')}</div>",
+                f"<div class='ev-selected'>{line.replace('[[SELECTED]]', '')}</div>",
                 unsafe_allow_html=True
             )
         elif line.startswith("[[HEADER]]"):
             flush()
             st.markdown(
-                f"<div style='font-size:20px;font-weight:600;color:#e8e8e8;"
-                f"margin-bottom:4px;'>{line.replace('[[HEADER]]', '')}</div>",
+                f"<div class='ev-header-big'>{line.replace('[[HEADER]]', '')}</div>",
                 unsafe_allow_html=True
             )
         elif line.startswith("[[SUBHEADER]]"):
             flush()
             st.markdown(
-                f"<div style='font-size:13px;color:#9aa0a6;margin-bottom:2px;'>"
-                f"{line.replace('[[SUBHEADER]]', '')}</div>",
+                f"<div class='ev-subheader'>{line.replace('[[SUBHEADER]]', '')}</div>",
                 unsafe_allow_html=True
             )
         elif line.startswith("[[TOTAL]]"):
             flush()
-            content = line.replace("[[TOTAL]]", "")
-            st.markdown(
-                f"<div style='background:#0f2b18;border:1px solid #2e7d32;"
-                f"border-radius:6px;padding:12px 16px;margin:10px 0;"
-                f"font-family:ui-monospace,SFMono-Regular,monospace;font-size:14px;"
-                f"font-weight:600;color:#81c784;white-space:pre;overflow-x:auto;'>"
-                f"{content.replace(' ', '&nbsp;')}</div>",
-                unsafe_allow_html=True
-            )
+            content = line.replace("[[TOTAL]]", "").replace(" ", "&nbsp;")
+            st.markdown(f"<div class='ev-total'>{content}</div>", unsafe_allow_html=True)
         elif stripped in ("PRICE", "SPECS", "FEATURE DIFFERENCES") or stripped.endswith("All Variants"):
             flush()
-            st.markdown(
-                f"<div style='font-size:17px;font-weight:600;color:#4da6ff;"
-                f"margin-top:18px;margin-bottom:8px;letter-spacing:0.5px;'>"
-                f"{stripped.title()}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div class='ev-heading'>{stripped.title()}</div>", unsafe_allow_html=True)
         elif stripped.startswith("Note:"):
             flush()
-            st.markdown(
-                f"<div style='background:#1a2733;border-left:3px solid #4da6ff;"
-                f"padding:12px 16px;border-radius:4px;font-size:14px;"
-                f"margin:14px 0;color:#c9d6e0;'>{stripped}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div class='ev-note'>{stripped}</div>", unsafe_allow_html=True)
         elif "policybazaar" in stripped.lower():
             flush()
             idx = stripped.find("http")
             label = stripped[:idx].strip() if idx > 0 else "Insurance quotes:"
             url = stripped[idx:].strip() if idx > 0 else "https://www.policybazaar.com/motor-insurance/car-insurance/"
             st.markdown(
-                f"<div style='font-size:14px;margin:10px 0;'>{label} "
-                f"<a href='{url}' target='_blank' "
-                f"style='color:#4da6ff;font-weight:500;'>Check on PolicyBazaar</a></div>",
+                f"<div style='font-size:clamp(12.5px,2.9vw,14px);margin:10px 0;'>{label} "
+                f"<a href='{url}' target='_blank' style='color:#4da6ff;font-weight:500;'>"
+                f"Check on PolicyBazaar</a></div>",
                 unsafe_allow_html=True
             )
         elif stripped.startswith("Would you like") or stripped.startswith("Chahenge"):
             flush()
-            st.markdown(
-                f"<div style='font-style:italic;font-size:15px;color:#8ab4a0;"
-                f"margin:18px 0 8px 0;padding-left:4px;'>{stripped}</div>",
-                unsafe_allow_html=True
-            )
+            st.markdown(f"<div class='ev-suggest'>{stripped}</div>", unsafe_allow_html=True)
         elif not stripped:
             continue
         else:
             buffer.append(line)
 
     flush()
-
 
 def render_tco_form():
     st.markdown("**Let me calculate your savings. A few quick questions:**")
